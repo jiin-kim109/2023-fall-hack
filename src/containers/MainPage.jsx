@@ -19,14 +19,12 @@ const DWrapper = styled.div`
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    border: 2px solid blue;
 `;
 
 const DinWrapper = styled.div`
     display: flex;
     flex = 1;
     width: 100%;
-    border: 2px solid red;
     padding: 10px;
     justify-content: center;
     align-items: center;
