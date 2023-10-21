@@ -9,6 +9,7 @@ import logo from '../resources/logo.png';
 const Wrapper = styled.div`
     display: flex;
     padding: 4px;
+    margin: 10px;
     border-size: 1px;
     border-width: 2px;
     border-style: dashed;
@@ -16,27 +17,19 @@ const Wrapper = styled.div`
     align-items: center;
 `;
 
-
-const Text = styled.div`
-    text-align: center;
-    flex: 1;
-`;
-
-
 const Logo = styled.img`
-    max-width: 100px; /* Adjust the width as needed */
+    max-width: 100px;
+    flex: 1;
+    margin-left: 150px;
 `;
 
 function Header() {
     return (
         <Wrapper>
-            <Stack direction="row" spacing={30}>
-                <Logo src={logo} alt="Logo" />
-                <Text>Rediscover Your Path with AI Guidance</Text>
+            <Logo src={logo} alt="Logo" />
                 <Button variant="contained">
                     SIGN UP
                 </Button>
-            </Stack>
         </Wrapper>
     );
 }

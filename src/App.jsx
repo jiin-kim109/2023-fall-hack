@@ -18,7 +18,6 @@ function App() {
                 <Route path="result" element={<ResultPage />} />
             </Routes>
             </BrowserRouter>
-            <Footer />
         </div>
     );
 }
