@@ -1,0 +1,40 @@
+{
+    "questions": [
+        {
+            "id": 1,
+            "question": "This is an example question.",
+            "option_type": "select",
+            "options": [
+                {
+                    "option": "example option 1"
+                },
+                {
+                    "option": "example option 2"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "question": "This is an example question.",
+            "option_type": "multi-select",
+            "options": [
+                {
+                    "option": "example option 1"
+                },
+                {
+                    "option": "example option 2"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "question" : "This is an example question.",
+            "option_type": "scale",
+            "options": [
+                {
+                    "option": "example scale option"
+                }
+            ]
+        }
+    ]
+}
