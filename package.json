@@ -7,10 +7,14 @@
     "@emotion/styled": "^11.11.0",
     "@material-ui/data-grid": "^4.0.0-alpha.37",
     "@mui/material": "^5.14.14",
+<<<<<<< HEAD
     "@mui/styled-engine-sc": "^6.0.0-alpha.2",
     "@mui/x-data-grid": "^6.16.3",
     "google-map-react": "^2.2.1",
     "install": "^0.13.0",
+=======
+    "google-map-react": "^2.2.1",
+>>>>>>> 5f97639000034657b422544125ec1f4d3d860ba6
     "joi": "^17.11.0",
     "npm": "^10.2.1",
     "python-shell": "^5.0.0",
@@ -33,7 +37,6 @@
     "prop-types": "^15.8.1"
   },
   "scripts": {
-    "preinstall": "./preinstall.sh",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "start": "GENERATE_SOURCEMAP=false react-scripts start",
