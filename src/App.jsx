@@ -5,6 +5,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Questionnaire from './containers/Questionnaire';
+import ResultPage from './containers/ResultPage';
 
 function App() {
     return (
@@ -14,7 +15,7 @@ function App() {
             <Routes>
                 <Route path="/" element={<MainPage />} />
                 <Route path="/q/:qId" element={<Questionnaire />} />
-                <Route path="result" element={<>result</>} />
+                <Route path="result" element={<ResultPage />} />
             </Routes>
             </BrowserRouter>
             <Footer />

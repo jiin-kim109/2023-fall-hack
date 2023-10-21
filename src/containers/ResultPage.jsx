@@ -1,15 +1,11 @@
 import React from 'react';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
 
-function ReportingPage() {
+function ResultPage() {
     return (
         <div>
-            <Header />
-            <p>Reporting Page</p>
-            <Footer />
+            <p>Result Page</p>
         </div>
     );
 }
 
-export default ReportingPage;
+export default ResultPage;

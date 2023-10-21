@@ -7,13 +7,26 @@
             "options": [
                 {
                     "option": "example option 1",
+                    "values": [
+                        {
+                            "key": "a",
+                            "replaceTo": 5
+                        }
+                    ],
                     "next_page_id": 2
                 },
                 {
                     "option": "example option 2",
+                    "values": [
+                        {
+                            "key": "a",
+                            "replaceTo": 1
+                        }
+                    ],
                     "next_page_id": 3
                 }
-            ]
+            ],
+            "parse_to": "We have ${a} friends in total"
         },
         {
             "id": 2,
@@ -22,13 +35,26 @@
             "options": [
                 {
                     "option": "example option 1",
+                    "values": [
+                        {
+                            "key": "a",
+                            "replaceTo": 5
+                        }
+                    ],
                     "next_page_id": 3
                 },
                 {
                     "option": "example option 2",
+                    "values": [
+                        {
+                            "key": "a",
+                            "replaceTo": 5
+                        }
+                    ],
                     "next_page_id": 3
                 }
-            ]
+            ],
+            "parse_to": "We have ${a} friends in total"
         },
         {
             "id": 3,
@@ -37,9 +63,20 @@
             "options": [
                 {
                     "option": "example scale option",
+                    "values": [
+                        {
+                            "key": "a",
+                            "replaceTo": 5
+                        },
+                        {
+                            "key": "b",
+                            "replaceTo": 10
+                        }
+                    ],
                     "next_page_id": null
                 }
-            ]
+            ],
+            "parse_to": "We have ${a} friends in total and our budget limit is ${b}"
         }
     ]
 }

@@ -19,6 +19,7 @@ function MainPage() {
             <Wrapper>
                 <Logo width={250} height={250} />
                 <Button variant="contained" onClick={() => navigate("/q/1")}>Get Started</Button>
+                <Button variant="text" onClick={() => navigate("/result")}>Result</Button>
             </Wrapper>
         </div>
     );
