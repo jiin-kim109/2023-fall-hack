@@ -4,13 +4,17 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { QuestionnaireContextProvider } from './context/questionnaireContext';
+import { ThemeProvider } from '@mui/material';
+import theme from './theme.js'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <React.StrictMode>
-        <QuestionnaireContextProvider>
-            <App />
-        </QuestionnaireContextProvider>
+        <ThemeProvider theme={theme}>
+            <QuestionnaireContextProvider>
+                <App />
+            </QuestionnaireContextProvider>
+        </ThemeProvider>
     </React.StrictMode>,
 );
 
