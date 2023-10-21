@@ -1,8 +1,6 @@
 import React from 'react';
 import GoogleMapReact from 'google-map-react';
-import DataGrid from 'react-data-grid';
 import styled from 'styled-components';
-import env from 'react-dotenv';
 
 const RowWrapper = styled.div`
     display: flex;
