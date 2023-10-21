@@ -26,7 +26,7 @@
                     "next_page_id": 3
                 }
             ],
-            "parse_to": "We have ${a} friends in total"
+            "output_text": "We have ${a} friends in total"
         },
         {
             "id": 2,
@@ -54,7 +54,7 @@
                     "next_page_id": 3
                 }
             ],
-            "parse_to": "We have ${a} friends in total"
+            "output_text": "We have ${a} friends in total"
         },
         {
             "id": 3,
@@ -76,7 +76,7 @@
                     "next_page_id": null
                 }
             ],
-            "parse_to": "We have ${a} friends in total and our budget limit is ${b}"
+            "output_text": "We have ${a} friends in total and our budget limit is ${b}"
         }
     ]
 }
