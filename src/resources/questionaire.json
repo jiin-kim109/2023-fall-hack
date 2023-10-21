@@ -1,0 +1,306 @@
+{
+    "questions": [
+       
+
+
+        {
+            "id": 1,
+            "question" : "How many people are travelling?",
+            "option_type": "scale",
+            "options": [
+                {
+                    "option": "number of people",
+                    "values": [
+                        {
+                            "key": "a",
+                            "range": [1],
+                            "replaceTo": "1"
+                        },
+                        {
+                            "key": "a",
+                            "range": [2],
+                            "replaceTo": "2"
+                        },
+                          {
+                            "key": "a",
+                            "range": [3],
+                            "replaceTo": "3"
+                        },
+                        {
+                            "key": "a",
+                            "range": [4],
+                            "replaceTo": "4"
+                        },
+                          {
+                            "key": "a",
+                            "range": [5],
+                            "replaceTo": "5"
+                        },
+                        {
+                            "key": "a",
+                            "range": [6],
+                            "replaceTo": "6"
+                        },  {
+                            "key": "a",
+                            "range": [7,10],
+                            "replaceTo":"6+"
+                        }
+
+                    ],
+                    "next_page_id": 2
+                }
+            ],
+            "output_text": "Recommend me a trip for ${a} people"
+        },
+        {
+            "id": 2,
+            "question" : "What is the relationship with the people you are traveling with?",
+            "option_type": "multi-select",
+             "options": [
+                {
+                    "option": "Friends",
+                    "values": [
+                        {
+                            "key": "a",
+                            "replaceTo": "with friends"
+                        }
+                    ],
+                    "next_page_id": 3
+                },
+                  {
+                    "option": "Family",
+                    "values": [
+                        {
+                            "key": "b",
+                            "replaceTo": "with family"
+                        }
+                    ],
+                    "next_page_id": 3
+                },
+                 {
+                    "option": "Alone",
+                    "values": [
+                        {
+                            "key": "c",
+                            "replaceTo": "alone"
+                        }
+                    ],
+                    "next_page_id": 3
+                }
+            ],
+            "output_text": "to travel ${a} ${b} ${c}"
+        },
+           {
+            "id": 3,
+            "question" : "How long is your duration of your travel?",
+            "option_type": "scale",
+            "options": [
+                {
+                    "option": "number of days",
+                    "values": [
+                        {
+                            "key": "a",
+                            "range": [2],
+                            "replaceTo": "2 days"
+                        },
+                          {
+                            "key": "a",
+                            "range": [2,7],
+                            "replaceTo": "a week"
+                        },
+                            {
+                            "key": "a",
+                            "range": [7,14],
+                            "replaceTo": "two weeks"
+                        },
+                           {
+                            "key": "a",
+                            "range": [14,30],
+                            "replaceTo": "one month"
+                        },
+                        {
+                            "key": "a",
+                            "range": [30,60],
+                            "replaceTo": "two months"
+                        },
+                         {
+                            "key": "a",
+                            "range": [60,365],
+                            "replaceTo": "over two months"
+                        }
+                       
+
+                    ],
+                    "next_page_id": 4
+                }
+            ],
+            "output_text": "for a duration of ${a}"
+        },
+            {
+            "id": 4,
+            "question" : "What is your desired budget?",
+            "option_type": "select",
+            "options": [
+                {
+                    "option": "$0~$500",
+                    "values": [
+                        {
+                            "key": "a",
+                            "replaceTo": "500 dollars"
+                        }
+                    ],
+                    "next_page_id": 5
+                },
+                {
+                    "option": "$500~$1500",
+                    "values": [
+                        {
+                            "key": "a",
+                            "replaceTo": "$500~$1500 dollars"
+                        }
+                    ],
+                    "next_page_id": 5
+                },
+                 {
+                    "option": "$1500~$3000",
+                    "values": [
+                        {
+                            "key": "a",
+                            "replaceTo": "$1500~$3000 dollars"
+                        }
+                    ],
+                    "next_page_id": 5
+                },
+                 {
+                    "option": "$3000+",
+                    "values": [
+                        {
+                            "key": "a",
+                            "replaceTo": "$3000+ dollars"
+                        }
+                    ],
+                    "next_page_id": 5
+                }
+            ],
+            "output_text": "with a budget of ${a}"
+        },
+        {
+            "id": 5,
+            "question": "Do you have a desired country to travel to?",
+            "option_type": "select",
+            "options": [
+                {
+                    "option": "Yes",
+                    "values": [
+                        {
+                            "key": "a",
+                            "replaceTo": ""
+                        }
+                    ],
+                    "next_page_id": 6
+                },
+                {
+                    "option": "No",
+                    "values": [
+                        {
+                            "key": "a",
+                            "replaceTo": "any country"
+                        }
+                    ],
+                    "next_page_id": 7
+                }
+            ],
+            "output_text": "I prefer to travel to "
+    
+        },
+        {
+            "id": 6,
+            "question": "What is your desired country?",
+            "option_type": "text",
+            "options": [
+                {
+                    "option": "Desired country",
+                    "values": [
+                        {
+                            "key": "a",
+                            "replaceTo": null
+                        }
+                    ],
+                    "next_page_id": 7
+                }       
+    ], "output_text": "${a}"
+},
+{
+    "id": 7,
+    "question": "Which infrastructure do you prefer?",
+    "option_type": "select",
+    "options": [
+        {
+            "option": "Nature",
+            "values": [
+                {
+                    "key": "a",
+                    "replaceTo": "the nature"
+                }
+            ],
+            "next_page_id": 8
+        },
+        {
+            "option": "City",
+            "values": [
+                {
+                    "key": "a",
+                    "replaceTo": "a city"
+                }
+            ],
+            "next_page_id": 9
+        }
+    ],
+    "output_text": "around ${a}"
+
+},
+{
+    "id": 8,
+    "question": "What type of nature do you prefer?",
+    "option_type": "multi-select",
+    "options": [
+        {
+            "option": "Mountain",
+            "values": [
+                {
+                    "key": "a",
+                    "replaceTo": "mountains"
+                }
+            ],
+            "next_page_id": 9
+        },
+        {
+            "option": "Lakes/River",
+            "values": [
+                {
+                    "key": "b",
+                    "replaceTo": "lakes and rivers"
+                }
+            ],
+            "next_page_id": 9
+        },
+        {
+            "option": "Ocean",
+            "values": [
+                {
+                    "key": "c",
+                    "replaceTo": "oceans"
+                }
+            ],
+            "next_page_id": 9
+        }
+    ],
+    "output_text": "with a lot of ${a} ${b} ${c}"
+
+}
+
+
+        
+]
+}
+
