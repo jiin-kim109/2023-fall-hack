@@ -11,13 +11,20 @@ const Wrapper = styled.div`
     align-items: center;
 `;
 
+const Text = styled.div`
+    text-align: center;
+    flex: 1;
+`;
+
+const Logo = styled.img`
+    max-width: 100px; /* Adjust the width as needed */
+`;
+
 function Header() {
     return (
         <Wrapper>
-            <div />
-            <button type="button" onClick={() => null}>
-                Login
-            </button>
+            <Text>HEADER</Text>
+            {/* <Logo src={logoSrc} alt="Logo" /> */}
         </Wrapper>
     );
 }
