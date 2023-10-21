@@ -1,6 +1,5 @@
 import React from 'react';
 import GoogleMapReact from 'google-map-react';
-import { DataGrid } from '@material-ui/data-grid';
 import styled from 'styled-components';
 
 const RowWrapper = styled.div`
@@ -50,9 +49,10 @@ const columns = [
   ];
 
 function DataTable () {
+    // <DataGrid rows={rows} columns={columns} pageSize={5} />
     return (
         <div style={{ height: 400, width: '100%' }}>
-            <DataGrid rows={rows} columns={columns} pageSize={5} />
+            {null}
         </div>
     )
 }
