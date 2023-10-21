@@ -28,7 +28,7 @@ const rows = [
 ];
 
 function DataTable () {
-    return <DataGrid columns={columns} rows={rows} />
+    return <p>data table</p>
 }
 
 function GoogleMap() {
