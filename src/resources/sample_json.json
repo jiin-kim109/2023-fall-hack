@@ -70,8 +70,13 @@
                             "replaceTo": 5
                         },
                         {
+                            "key": "a",
+                            "range": [3,10],
+                            "replaceTo": 10
+                        },
+                        {
                             "key": "b",
-                            "range": [1,8],
+                            "range": [1,10],
                             "replaceTo": 10
                         }
                     ],
