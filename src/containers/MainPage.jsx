@@ -1,8 +1,8 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { useTheme } from 'styled-components';
 import { useNavigate } from 'react-router-dom';
 import { Button } from '@mui/material';
-import '@fontsource/roboto/300.css';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
 
 const MWrapper = styled.div`
     display: flex;
@@ -52,6 +52,7 @@ const Description = styled.div`
     padding: 10px;
 `;
 
+
 function MainPage() {
     const navigate = useNavigate();
     return (
@@ -74,8 +75,8 @@ function MainPage() {
     pinpoint locations on a map
                     </Description>
                 </DinWrapper>
-                <DinWrapper>
-                    <Button variant="contained" onClick={() => navigate("/q/1")}>Start your trip</Button>
+                <DinWrapper>  
+                    <Button variant="contained" color="leaf" onClick={() => navigate("/q/1")}>Start your trip</Button>
                 </DinWrapper>
             </DWrapper>
         </div>
