@@ -30,7 +30,7 @@ function questionnaireReducer(prevState, dispatch) {
     }).validate(dispatch));
 
     switch (dispatch.action) {
-        case "APPEND_ANSWER":
+        case "APPEND":
             state = {
                 ...prevState,
                 questions: [
