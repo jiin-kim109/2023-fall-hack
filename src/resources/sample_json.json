@@ -66,10 +66,12 @@
                     "values": [
                         {
                             "key": "a",
+                            "range": [1,3],
                             "replaceTo": 5
                         },
                         {
                             "key": "b",
+                            "range": [1,8],
                             "replaceTo": 10
                         }
                     ],
