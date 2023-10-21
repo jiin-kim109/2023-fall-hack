@@ -11,5 +11,18 @@
  *  );
  */
 function parse(template, values) {
-
+    let a, b, c;
+    for (let i = 0; i < values.length; i++) {
+        if (values[i].key == "a") {
+            a = values[i].replaceTo;
+        } else if (values[i].key == "b") {
+            b = values[i].replaceTo;
+        } else if (values[i].key == "c") {
+            c = values[i].replaceTo;
+        }
+    }
+  
+    let temp = eval('`' + template + '`');
+  
+    return temp;
 }
