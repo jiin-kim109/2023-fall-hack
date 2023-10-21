@@ -9,13 +9,13 @@ const RowWrapper = styled.div`
     flex-direction: row;
     justify-content: left;
     align-items: left;
-    border: 2px solid blue;
+    border: 2px;
 `;
 
 const ColumnWrapper = styled.div`
   display: flex;
   flex: 0.5;
-  border: 2px solid red;
+  border: 2px;
 `;
 
 const columns = [
