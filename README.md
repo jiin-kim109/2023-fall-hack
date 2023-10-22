@@ -1,3 +1,4 @@
+![](src/resources/newleaf.png)
 # NewLeafNavi
 
 ## Members
