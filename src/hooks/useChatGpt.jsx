@@ -12,6 +12,8 @@ function useChatGpt() {
       },
     ]);
 
+    const [gptResponse, setGptResponse] = useState('');
+
     const sendQuestion = async (questionMessage) => {
         const newMessage = {
           message: questionMessage,
@@ -31,11 +33,13 @@ function useChatGpt() {
               sender: "ChatGPT",
             };
             setMessages((prevMessages) => [...prevMessages, chatGPTResponse]);
+            setGptResponse(content);
+            return chatGPTResponse;
           }
         } catch (error) {
           console.error("Error processing message:", error);
-        } finally {
           setIsTyping(false);
+          return null;
         }
       };
     
@@ -67,7 +71,7 @@ function useChatGpt() {
         return response.json();
       }
     
-    return [messages, sendQuestion];
+    return [gptResponse, sendQuestion];
 }
 
 export default useChatGpt;

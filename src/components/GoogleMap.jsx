@@ -7,37 +7,24 @@ function Marker({ text }) {
     );
 }
 
-function GoogleMap() {
-    const defaultProps = {
-        center: {
-          lat: 10.99835602,
-          lng: 77.01502627
-        },
-        zoom: 11
-    };
-
-    const [markers, setMarkers] = useState([
-        {
-            lat: defaultProps.center.lat,
-            lng: defaultProps.center.lng,
-            text: "Sample Marker"
-        }
-    ]);
-
+function GoogleMap({ data }) {
     return (
         <div style={{ height: '100vh', width: '100%' }}>
                 <GoogleMapReact
                     bootstrapURLKeys={{ key: process.env.REACT_APP_GOOGLE_MAP_API_KEY }}
-                    defaultCenter={defaultProps.center}
-                    defaultZoom={defaultProps.zoom}
+                    defaultCenter={{
+                        lat: data.defaultMapCenterLatitude,
+                        lng: data.defaultMapCenterLongitude
+                    }}
+                    defaultZoom={4}
                     draggable={false}
                 >
-                    {markers.map((marker, i) => (
+                    {data.places.map((place, i) => (
                         <Marker
                             key={i}
-                            lat={marker.lat}
-                            lng={marker.lng}
-                            text={marker.text}
+                            lat={place.Latitude}
+                            lng={place.Longitude}
+                            text={place.name}
                         />
                     ))}
                 </GoogleMapReact>
