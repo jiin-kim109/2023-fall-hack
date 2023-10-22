@@ -1,4 +1,6 @@
-![](src/resources/newleaf.png)
+<p align="center">
+  <img src="src/resources/newleaf.png" />
+</p>
 # NewLeafNavi
 
 ## Members
