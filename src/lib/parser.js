@@ -11,14 +11,10 @@
  *  );
  */
 function parse(template, values) {
-    let a, b, c;
+    let a;
     for (let i = 0; i < values.length; i++) {
         if (values[i].key == "a") {
             a = values[i].replaceTo;
-        } else if (values[i].key == "b") {
-            b = values[i].replaceTo;
-        } else if (values[i].key == "c") {
-            c = values[i].replaceTo;
         }
     }
   
@@ -26,3 +22,5 @@ function parse(template, values) {
   
     return temp;
 }
+
+export default parse;

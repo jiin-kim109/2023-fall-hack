@@ -7,7 +7,7 @@
             "id": 1,
             "question" : "How many people are travelling?",
             "option_type": "scale",
-            "scale_min": "1",
+            "scale_min": "0",
             "scale_max": "10",
             "options": [
                 {
@@ -73,7 +73,7 @@
                     "option": "Family",
                     "values": [
                         {
-                            "key": "b",
+                            "key": "a",
                             "replaceTo": "with family"
                         }
                     ],
@@ -83,14 +83,14 @@
                     "option": "Alone",
                     "values": [
                         {
-                            "key": "c",
+                            "key": "a",
                             "replaceTo": "alone"
                         }
                     ],
                     "next_page_id": 3
                 }
             ],
-            "output_text": "to travel ${a} ${b} ${c}"
+            "output_text": "to travel ${a}"
         },
            {
             "id": 3,
