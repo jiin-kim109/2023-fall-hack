@@ -4,11 +4,12 @@ import { useNavigate } from 'react-router-dom';
 import { Button } from '@mui/material';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import theme from '../theme'
+import { getByPlaceholderText } from '@testing-library/react';
 
 const MWrapper = styled.div`
     display: flex;
     flex: 1;
-    padding: 10px;
+    padding: 5px;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -34,21 +35,22 @@ const DinWrapper = styled.div`
 const Maintitle = styled.div`
     text-align: center;
     flex: 1;
-    margin: 20px;
+    white-space: pre-wrap;
+    font-weight: bold;
 `;
 
 const titlefont = {
-    fontSize: 50
-
+    fontSize: 50,
 }
 
 const desfont = {
-    fontSize: 30
+    fontSize: 25,
 }
 
 const Description = styled.div`
-    text-align: center;
-    padding: 10px;
+    text-align: left;
+    padding: 5px;
+    margin-left: 40px;
 `;
 
 
@@ -61,9 +63,9 @@ function MainPage() {
                     <div>
                         <p style={titlefont}>Rediscover Your Life {"\n"}
                         with AI Guidance  </p>
-                        Trusted by 5 travellers
                     </div>
                 </Maintitle>
+                Trusted by 5 travellers
             </MWrapper>
             <DWrapper>
                 <DinWrapper>
@@ -75,7 +77,7 @@ function MainPage() {
                     </Description>
                 </DinWrapper>
                 <DinWrapper>  
-                    <Button variant="contained" color="leaf" onClick={() => navigate("/q/1")}>Start your trip</Button>
+                    <Button variant="contained" color="leaf" size="large" onClick={() => navigate("/q/1")}>Start your trip</Button>
                 </DinWrapper>
             </DWrapper>
         </div>

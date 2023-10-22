@@ -10,6 +10,7 @@ const Wrapper = styled.div`
     border-width: 2px;
     justify-content: space-between;
     align-items: center;
+    font-weight: bold;
 `;
 
 const Logo = styled.img`
@@ -21,9 +22,9 @@ function Header() {
     return (
         <Wrapper>
             <Logo src={logo} alt="Logo" />
-                <Button variant="contained" color="leaf">
-                        SIGN UP
-                </Button>
+            <Button variant="contained" color="leaf" size="large">
+                    SIGN UP
+            </Button>
         </Wrapper>
     );
 }
