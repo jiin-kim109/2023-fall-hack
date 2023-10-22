@@ -5,6 +5,7 @@ import useQuestionnaireState from '../hooks/useQuestionnaireState';
 import { Button } from '@mui/material';
 import questionnaireData from '../resources/questionaire.json';
 import parse from '../lib/parser';
+import BoldText from '../hooks/useBold'
 
 const Wrapper = styled.div`
   display: flex;
@@ -36,15 +37,15 @@ function QuestionnaireOption({ option_type, option, outputText, onSelect }) {
     switch (option_type) {
         case "select":
             component = (
-                <Button variant="contained" onClick={handleOptionSelect}>
-                    {option.option}
+                <Button variant="contained" color="leaf" size="large" onClick={handleOptionSelect}>
+                    <BoldText>{option.option}</BoldText>
                 </Button>
             );
             break;
         default:
             component = (
-                <Button variant="contained" onClick={handleOptionSelect}>
-                    {option.option}
+                <Button variant="contained" color="leaf" size="large" onClick={handleOptionSelect}>
+                    <BoldText>{option.option}</BoldText>
                 </Button>
             );
             break;
@@ -63,6 +64,9 @@ function Questionnaire() {
     const question = findQuestion(qId);
     const [sliderValue, setSliderValue] = useState(0);
     const [output_text, setOutputText] = useState("");
+    const [textInput, setTextInput] = useState("");
+    const [isOptionSelected, setIsOptionSelected] = useState(false);
+
 
     const handleOptionSelect = (option, outputText) => {
 
@@ -70,10 +74,13 @@ function Questionnaire() {
         setUserResponses({ option });
         setOutputText(outputText);
         console.log(option);
+        setIsOptionSelected(true);
+
 
     };
 
     const goToNextQuestion = () => {
+        setIsOptionSelected(false);
         if (currentQuestionIndex + 1 < questionnaireData.questions.length) {
             navigate(`/q/` + nextId);
         }
@@ -82,7 +89,9 @@ function Questionnaire() {
         if (qId == 1 || qId == 3) {
             console.log(sliderValue);
             s = parse(output_text, [{"key": "a", "replaceTo": sliderValue}]);
-        } else {
+        } else if (qId == 6) {
+            s = parse(output_text, [{"key": "a", "replaceTo": textInput}]);
+        } else  {
             s = parse(output_text, userResponses.option.values);
         }
 
@@ -91,6 +100,8 @@ function Questionnaire() {
         
     };
     const handleSliderChange = (event) => {
+        setIsOptionSelected(true);
+
         console.log(question.options[0].next_page_id)
         const newValue = event.target.value;
         setSliderValue(newValue);
@@ -102,6 +113,17 @@ function Questionnaire() {
             setnextId(option)
         }
     };
+
+    const handleTextChange = (event) => {
+        const newText = event.target.value;
+        setTextInput(newText);
+        setOutputText(question.output_text);
+
+        const option = question.options[0].next_page_id;
+        if (option) {
+            setnextId(option)
+        }
+    }
 
 
 
@@ -123,28 +145,40 @@ function Questionnaire() {
                                     id="slider"
                                     value={sliderValue}
                                     onChange={handleSliderChange}
-
-
                                 />
                                 {sliderValue}
                             </div>
-                        ) : 
-                        
-                        (
+                        ) : (
+                            <></>
+                        )}
+                        {question.option_type === 'select' ? (
                             <QuestionnaireOption
                                 option_type={question.option_type}
                                 option={option}
                                 outputText={question.output_text}
                                 onSelect={handleOptionSelect}
                             />
+                        ):(
+                            <></>
+                        )}
+
+                        {question.option_type === 'text' ? (
+                            <input
+                                type='textbox'
+                                onChange={handleTextChange}
+                            />
+                        ):(
+                            <></>
                         )}
                     </div>
                 ))}
 
                 <Button> </Button>
-                <BottomWrapper>
-                    <Button variant='outlined' onClick={goToNextQuestion}>Next</Button>
-                </BottomWrapper>
+                {isOptionSelected && (
+    <BottomWrapper>
+        <Button variant='outlined' onClick={goToNextQuestion}>Next</Button>
+    </BottomWrapper>
+)}
             </Wrapper>
         </div>
     );
