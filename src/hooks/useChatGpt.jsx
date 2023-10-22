@@ -1,8 +1,9 @@
 import { useState } from 'react';
 
-const API_KEY = "";
-
 function useChatGpt() {
+    const [isTyping, setIsTyping] = useState(false);
+    const API_KEY = process.env.REACT_APP_CHAT_GPT_API_KEY;
+
     const [messages, setMessages] = useState([
       {
         message: "Hello, I'm ChatGPT! Ask me anything!",
@@ -13,7 +14,7 @@ function useChatGpt() {
 
     const sendQuestion = async (questionMessage) => {
         const newMessage = {
-          questionMessage,
+          message: questionMessage,
           direction: 'outgoing',
           sender: "user",
         };
@@ -51,7 +52,7 @@ function useChatGpt() {
             ...apiMessages,
           ],
         };
-    
+       
         const response = await fetch("https://api.openai.com/v1/chat/completions", {
           method: "POST",
           headers: {
@@ -60,6 +61,8 @@ function useChatGpt() {
           },
           body: JSON.stringify(apiRequestBody),
         });
+
+        console.log(response);
     
         return response.json();
       }

@@ -1,6 +1,9 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import GoogleMapReact from 'google-map-react';
 import styled from 'styled-components';
+import GoogleMap from '../components/GoogleMap';
+import useChatGpt from '../hooks/useChatGpt';
+import { Button } from '@mui/base';
 
 const RowWrapper = styled.div`
     display: flex;
@@ -15,6 +18,8 @@ const ColumnWrapper = styled.div`
   display: flex;
   flex: 0.5;
   border: 2px;
+  flex-direction: column;
+  align-items: start;
 `;
 
 const columns = [
@@ -31,27 +36,28 @@ function DataTable () {
     return <p>data table</p>
 }
 
-function GoogleMap() {
-    return (
-        <div style={{ height: '100vh', width: '100%' }}>
-                <GoogleMapReact
-                    bootstrapURLKeys={{ key: process.env.REACT_APP_GOOGLE_MAP_API_KEY }}
-                    defaultCenter={{ lat: 59.95, lng: 30.33 }}
-                    defaultZoom={11}
-                >
-                </GoogleMapReact>
-        </div>
-    )
-}
-
 function ResultPage() {
+    const [messages, sendQuestion] = useChatGpt();
+
     return (
         <div>
-            <p>Result Page</p>
-            {/* <GoogleMap /> */}
             <RowWrapper>
               <ColumnWrapper>
+                <h1>Best Places</h1>
                 <DataTable />
+                <Button onClick={() => sendQuestion(`
+                recommend me places in South Korea for a trip in the following format:
+                places: [
+                Name:
+                Address:
+                Longitude:
+                Latitude:
+                ],
+                DefaultMapCenterLongitude:
+                DefaultMapCenterLatitude:
+                DefaultMapZoom:
+                `)}>test</Button>
+                <p>{JSON.stringify(messages)}</p>
               </ColumnWrapper>
               <ColumnWrapper>
                 <GoogleMap />
