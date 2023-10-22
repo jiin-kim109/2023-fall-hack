@@ -19,7 +19,6 @@ function parse(template, values) {
     }
   
     let temp = eval('`' + template + '`');
-  
     return temp;
 }
 

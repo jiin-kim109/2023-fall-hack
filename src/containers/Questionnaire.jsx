@@ -81,8 +81,10 @@ function Questionnaire() {
 
     const goToNextQuestion = () => {
         setIsOptionSelected(false);
-        if (currentQuestionIndex + 1 < questionnaireData.questions.length) {
+        if (nextId != null) {
             navigate(`/q/` + nextId);
+        } else {
+            navigate(`/result`);
         }
 
         let s;
@@ -94,10 +96,12 @@ function Questionnaire() {
         } else  {
             s = parse(output_text, userResponses.option.values);
         }
-
         console.log(s);
-        
-        
+
+        dispatch({
+            action: "APPEND",
+            value: s,
+        })
     };
     const handleSliderChange = (event) => {
         setIsOptionSelected(true);
@@ -115,6 +119,7 @@ function Questionnaire() {
     };
 
     const handleTextChange = (event) => {
+        setIsOptionSelected(true);
         const newText = event.target.value;
         setTextInput(newText);
         setOutputText(question.output_text);

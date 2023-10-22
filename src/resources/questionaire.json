@@ -282,7 +282,7 @@
             "option": "Lakes/River",
             "values": [
                 {
-                    "key": "b",
+                    "key": "a",
                     "replaceTo": "lakes and rivers"
                 }
             ],
@@ -292,14 +292,14 @@
             "option": "Ocean",
             "values": [
                 {
-                    "key": "c",
+                    "key": "a",
                     "replaceTo": "oceans"
                 }
             ],
             "next_page_id": null
         }
     ],
-    "output_text": "with a lot of ${a} ${b} ${c}"
+    "output_text": "with a lot of ${a}"
 
 }
 
