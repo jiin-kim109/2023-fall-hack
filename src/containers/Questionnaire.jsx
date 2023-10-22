@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import useQuestionnaireState from '../hooks/useQuestionnaireState';
 import { Button } from '@mui/material';
 import questionnaireData from '../resources/questionaire.json';
+import parse from '../lib/parser';
 
 const Wrapper = styled.div`
   display: flex;
@@ -25,9 +26,9 @@ function findQuestion(question_id) {
     return questionnaireData.questions.find(q => q.id == question_id);
 }
 
-function QuestionnaireOption({ option_type, option, onSelect }) {
+function QuestionnaireOption({ option_type, option, outputText, onSelect }) {
     const handleOptionSelect = () => {
-        onSelect(option);
+        onSelect(option, outputText);
     };
 
     let component;
@@ -60,26 +61,42 @@ function Questionnaire() {
     const [userResponses, setUserResponses] = useState({});
     const [nextId, setnextId] = useState(1);
     const question = findQuestion(qId);
-    const [sliderValue, setSliderValue] = useState(1);
+    const [sliderValue, setSliderValue] = useState(0);
+    const [output_text, setOutputText] = useState("");
 
-    const handleOptionSelect = (option) => {
+    const handleOptionSelect = (option, outputText) => {
 
         setnextId(option.next_page_id)
-        setUserResponses({ ...userResponses, [question.id]: option });
+        setUserResponses({ option });
+        setOutputText(outputText);
+        console.log(option);
 
     };
 
     const goToNextQuestion = () => {
         if (currentQuestionIndex + 1 < questionnaireData.questions.length) {
             navigate(`/q/` + nextId);
-
         }
+
+        let s;
+        if (qId == 1 || qId == 3) {
+            console.log(sliderValue);
+            s = parse(output_text, [{"key": "a", "replaceTo": sliderValue}]);
+        } else {
+            s = parse(output_text, userResponses.option.values);
+        }
+
+        console.log(s);
+        
+        
     };
     const handleSliderChange = (event) => {
         console.log(question.options[0].next_page_id)
         const newValue = event.target.value;
         setSliderValue(newValue);
         const option = question.options[0].next_page_id
+        setOutputText(question.output_text);
+
 
         if (option) {
             setnextId(option)
@@ -117,6 +134,7 @@ function Questionnaire() {
                             <QuestionnaireOption
                                 option_type={question.option_type}
                                 option={option}
+                                outputText={question.output_text}
                                 onSelect={handleOptionSelect}
                             />
                         )}
