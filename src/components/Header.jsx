@@ -14,6 +14,7 @@ const Wrapper = styled.div`
     font-weight: bold;
 `;
 
+
 const Logo = styled.img`
     max-width: 100px;
     flex: 1;
@@ -21,12 +22,15 @@ const Logo = styled.img`
 
 function Header() {
     return (
-        <Wrapper>
-            <Logo src={logo} alt="Logo" />
-            <Button variant="contained" color="leaf" size="large">
-                    <BoldText>SIGN UP</BoldText>
-            </Button>
-        </Wrapper>
+            <Wrapper>
+                <Logo src={logo} alt="Logo" />
+                <Button color="leaf" size="large"><BoldText>HOME</BoldText></Button>
+                <Button BoldText color="leaf" size="large"><BoldText>POPULAR PLACES</BoldText></Button>
+                <Button color="leaf" size="large"><BoldText>CONTACT US</BoldText></Button>
+                <Button variant="contained" color="leaf" size="large">
+                        <BoldText>SIGN UP</BoldText>
+                </Button>
+            </Wrapper>
     );
 }
 

@@ -4,8 +4,8 @@ import { useNavigate } from 'react-router-dom';
 import { Button } from '@mui/material';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import theme from '../theme'
-import { getByPlaceholderText } from '@testing-library/react';
 import BoldText from '../hooks/useBold';
+import videoT from '../resources/Travel.mp4'
 
 const MWrapper = styled.div`
     display: flex;
@@ -15,6 +15,7 @@ const MWrapper = styled.div`
     justify-content: center;
     align-items: center;
 `;
+
 
 const DWrapper = styled.div`
     display: flex;
@@ -42,10 +43,17 @@ const Maintitle = styled.div`
 
 const titlefont = {
     fontSize: 50,
+    color: 'white'
 }
 
 const desfont = {
     fontSize: 25,
+    color: 'white'
+}
+
+const des2font = {
+    fontSize: 15,
+    color: 'white'
 }
 
 const Description = styled.div`
@@ -54,33 +62,33 @@ const Description = styled.div`
     margin-left: 40px;
 `;
 
-
 function MainPage() {
     const navigate = useNavigate();
     return (
         <div>
-            <MWrapper>
-                <Maintitle>
-                    <div>
-                        <p style={titlefont}><BoldText>Rediscover Your Life {"\n"}
-                        with AI Guidance</BoldText>  </p>
-                    </div>
-                </Maintitle>
-                Trusted by 5 travellers
-            </MWrapper>
-            <DWrapper>
-                <DinWrapper>
-                    <Description>
-                    <p style={desfont}><BoldText>Enjoy your moment in foreign countries</BoldText> </p>
-                    TurnOverNavi AI-based generator recommends 
-    the best place to live for all durations, displaying 
-    pinpoint locations on a map
-                    </Description>
-                </DinWrapper>
-                <DinWrapper>  
-                    <Button variant="contained" color="leaf" size="large" onClick={() => navigate("/q/1")}><BoldText>Start your trip</BoldText></Button>
-                </DinWrapper>
-            </DWrapper>
+            <div class="overlay"></div>
+            <video src={videoT} autoPlay loop muted />
+            <div class="content">
+                <MWrapper>
+                    <Maintitle>
+                        <div>
+                            <p style={titlefont}><BoldText>Rediscover Your Life {"\n"}
+                            with AI Guidance</BoldText>  </p>
+                        </div>
+                    </Maintitle>
+                </MWrapper>
+                <DWrapper>
+                    <DinWrapper>
+                        <Description>
+                        <p style={desfont}><BoldText>Enjoy your moment in foreign countries</BoldText> </p>
+                        <p style={des2font}>The NewLeafNavi AI-powered generator suggests the ideal living locations for various durations up to a year, displaying precise pinpoints</p>
+                        </Description>
+                    </DinWrapper>
+                    <DinWrapper>  
+                        <Button variant="contained" color="leaf" size="large" onClick={() => navigate("/q/1")}><BoldText>Start your trip</BoldText></Button>
+                    </DinWrapper>
+                </DWrapper>
+            </div>
         </div>
     );
 }
