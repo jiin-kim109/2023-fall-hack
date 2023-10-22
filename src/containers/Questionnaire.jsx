@@ -163,7 +163,7 @@ function Questionnaire() {
                                     value={sliderValue}
                                     onChange={handleSliderChange}
                                 />
-                                {sliderValue}
+                                <span style={{color: 'white', marginLeft: "20px", fontWeight: "bold"}}>{sliderValue}</span>
                             </div>
                         ) : (
                             <></>
