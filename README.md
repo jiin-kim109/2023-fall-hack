@@ -1,7 +1,7 @@
 # NewLeafNavi
 
 ## Short Description
-This project is a web application that suggest people to travel to new where they want to go. When the user press the button to start, the application will collect data through asking questions about their travelling plan. After user finish answering all those questions, the application will suggest the best place to travel based on the data that user provided.
+NewLeafNavi is a web-based AI application designed to help users find ideal locations to begin a fresh chapter in their lives while traveling. When users initiate the program, it gathers their personal preferences across various categories to create a personalized travel plan. Subsequently, the AI presents a map displaying the top travel destinations based on the collected data.
 
 ## Requirements
 **note**: This project is required to run the command down below to download all the dependencies.
@@ -10,12 +10,12 @@ This project is a web application that suggest people to travel to new where the
 npm install
 ```
 
-This web application uses Google map and Chat GPT API. In order to use this web application, user needs to create .env file that stores Google maps API key and Chat GPT API key in the root directory.
+This web application uses Google map and Chat GPT API. Users need to create .env file to store Google maps API key and Chat GPT API key in the root directory.
 
 ## Members
 
-- Jusung Park
-- Jiin Kim
-- Sanghyun Park
-- Kathy Cho 
-- Tommy Oh
+- Jusung Park jpa118@sfu.ca
+- Jiin Kim 
+- Sanghyun Park spa202@sfu.ca
+- Kathy Cho hca171@sfu.ca
+- Tommy Oh koa18@sfu.ca
