@@ -6,6 +6,8 @@ import { Button } from '@mui/material';
 import questionnaireData from '../resources/questionaire.json';
 import parse from '../lib/parser';
 import BoldText from '../hooks/useBold'
+import videoT from '../resources/Travel.mp4'
+
 
 const Wrapper = styled.div`
   display: flex;
@@ -18,8 +20,8 @@ const Wrapper = styled.div`
 const BottomWrapper = styled.div`
   display: flex;
   flex: 1;
-  flex-direction: row;
-  align-items: right;
+  flex-direction: column;
+  align-items: center;
 `;
 
 const Slider = styled.input`
@@ -135,11 +137,18 @@ function Questionnaire() {
     }
 
 
+    const Qfont = {
+        fontSize: 30,
+        color: 'white'
+    }
 
     return (
         <div>
+            <div class="overlay"></div>
+            <video src={videoT} width="100%" autoPlay loop muted />
             <Wrapper>
-                <h3>Question {qId}: {question.question}</h3>
+            <div class="content2">
+                <h1 style={Qfont}>Question {qId}: {question.question}</h1>
 
                 {question.options.map((option, i) => (
                     <div key={i}>
@@ -187,7 +196,9 @@ function Questionnaire() {
         <Button variant='outlined' color="leaf" size="large" onClick={goToNextQuestion}>Next</Button>
     </BottomWrapper>
 )}
+</div>
             </Wrapper>
+
         </div>
     );
 }
