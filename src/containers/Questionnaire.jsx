@@ -18,10 +18,14 @@ const Wrapper = styled.div`
 const BottomWrapper = styled.div`
   display: flex;
   flex: 1;
-  border: 2px solid red;
   flex-direction: row;
   align-items: right;
 `;
+
+const Slider = styled.input`
+    width: 500px;
+    margin: 3rem 0;
+`
 
 function findQuestion(question_id) {
     return questionnaireData.questions.find(q => q.id == question_id);
@@ -141,8 +145,7 @@ function Questionnaire() {
                     <div key={i}>
                         {question.option_type === 'scale' ? (
                             <div>
-                                <input
-
+                                <Slider
                                     type="range"
                                     min={question.scale_min}
                                     max={question.scale_max}
@@ -181,7 +184,7 @@ function Questionnaire() {
                 <Button> </Button>
                 {isOptionSelected && (
     <BottomWrapper>
-        <Button variant='outlined' onClick={goToNextQuestion}>Next</Button>
+        <Button variant='outlined' color="leaf" size="large" onClick={goToNextQuestion}>Next</Button>
     </BottomWrapper>
 )}
             </Wrapper>
