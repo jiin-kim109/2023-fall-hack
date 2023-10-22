@@ -7,6 +7,8 @@
             "id": 1,
             "question" : "How many people are travelling?",
             "option_type": "scale",
+            "scale_min": "1",
+            "scale_max": "10",
             "options": [
                 {
                     "option": "number of people",
@@ -94,6 +96,8 @@
             "id": 3,
             "question" : "How long is your duration of your travel?",
             "option_type": "scale",
+            "scale_min": "1",
+            "scale_max": "365",
             "options": [
                 {
                     "option": "number of days",
@@ -253,7 +257,7 @@
                     "replaceTo": "a city"
                 }
             ],
-            "next_page_id": 9
+            "next_page_id": null
         }
     ],
     "output_text": "around ${a}"
@@ -272,7 +276,7 @@
                     "replaceTo": "mountains"
                 }
             ],
-            "next_page_id": 9
+            "next_page_id": null
         },
         {
             "option": "Lakes/River",
@@ -282,7 +286,7 @@
                     "replaceTo": "lakes and rivers"
                 }
             ],
-            "next_page_id": 9
+            "next_page_id": null
         },
         {
             "option": "Ocean",
@@ -292,7 +296,7 @@
                     "replaceTo": "oceans"
                 }
             ],
-            "next_page_id": 9
+            "next_page_id": null
         }
     ],
     "output_text": "with a lot of ${a} ${b} ${c}"
