@@ -3,7 +3,7 @@
 ## Members
 
 - Jusung Park jpa118@sfu.ca
-- Jiin Kim 
+- Jiin Kim jka273@sfu.ca
 - Sanghyun Park spa202@sfu.ca
 - Kathy Cho hca171@sfu.ca
 - Tommy Oh koa18@sfu.ca
