@@ -3,6 +3,7 @@ import styled, { useTheme } from 'styled-components';
 import { useNavigate } from 'react-router-dom';
 import { Button } from '@mui/material';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import theme from '../theme'
 
 const MWrapper = styled.div`
     display: flex;

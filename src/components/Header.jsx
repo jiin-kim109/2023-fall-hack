@@ -1,14 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
 import Button from '@mui/material/Button';  
-import logo from '../resources/logo.png';
+import logo from '../resources/newleaf.png';
 
 const Wrapper = styled.div`
     display: flex;
     padding: 4Px;
     border-size: 1px;
     border-width: 2px;
-    border-style: dashed;
     justify-content: space-between;
     align-items: center;
 `;
