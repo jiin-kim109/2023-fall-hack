@@ -11,7 +11,7 @@
 NewLeafNavi is a web-based AI application designed to help users find ideal locations to begin a fresh chapter in their lives while traveling. When users initiate the program, it gathers their personal preferences across various categories to create a personalized travel plan. Subsequently, the AI presents a map displaying the top travel destinations based on the collected data.
 
 ## Requirements
-**note**: This project is required to run the command down below to download all the dependencies.
+**Note**: This project is required to run the command down below to download all the dependencies.
 
 ```bash
 // to install all the dependencies
@@ -20,7 +20,8 @@ npm install
 npm start
 ```
 
-This web application uses Google map and Chat GPT API. Users need to create .env file to store Google maps API key and Chat GPT API key in the root directory.
+This web application uses both the Google Maps API and the Chat GPT API. To enable their functionality, users are required to generate an .env file in the root directory for storing their respective API keys – one for Google Maps and the other for Chat GPT.
+
 
 ## Rough UI Sketch/Design
 
