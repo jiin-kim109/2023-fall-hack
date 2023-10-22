@@ -1,3 +1,5 @@
+**Note**: Include the attached .env file into the project directory
+
 # NewLeafNavi
 <p align="center">
   <img src="src/resources/newleaf.png" height = "300" width = "300"/>
