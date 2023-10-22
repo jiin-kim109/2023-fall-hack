@@ -14,7 +14,6 @@ const MWrapper = styled.div`
     width: 100%;
     flex-direction: column;
     justify-content: center;
-    border: 2px solid red;
     align-items: center;
 `;
 
@@ -24,7 +23,6 @@ const DWrapper = styled.div`
     flex: 1;
     flex-direction: row;
     justify-content: center;
-    border: 2px solid blue;
     align-items: center;
 `;
 
