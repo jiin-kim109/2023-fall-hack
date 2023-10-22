@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import styled from 'styled-components';
 import useQuestionnaireState from '../hooks/useQuestionnaireState';
-import { Button } from '@mui/material';
+import { Button, Typography } from '@mui/material';
 import questionnaireData from '../resources/questionaire.json';
 import parse from '../lib/parser';
 import BoldText from '../hooks/useBold'
@@ -16,6 +16,10 @@ const Wrapper = styled.div`
   justify-content: center;
   align-items: center;
 `;
+const nextButtonStyle = {
+    color: "white",
+    border: "1px solid white"
+  };
 
 const BottomWrapper = styled.div`
   display: flex;
@@ -28,6 +32,21 @@ const Slider = styled.input`
     width: 500px;
     margin: 3rem 0;
 `
+const buttonStyle = {
+    width: '200px', 
+    height: '48px', 
+    margin: '8px', 
+};
+
+const textboxStyle = {
+    width: '20rem',
+    backgroundColor: 'transparent',
+    color: 'white',
+    border: 'none',
+    borderBottom: '2px white solid',
+    margin: '1rem',
+    fontSize: '1.5rem',
+}
 
 function findQuestion(question_id) {
     return questionnaireData.questions.find(q => q.id == question_id);
@@ -39,24 +58,27 @@ function QuestionnaireOption({ option_type, option, outputText, onSelect }) {
     };
 
     let component;
-
     switch (option_type) {
         case "select":
-            component = (
-                <Button variant="contained" color="leaf" size="large" onClick={handleOptionSelect}>
-                    <BoldText>{option.option}</BoldText>
-                </Button>
-            );
-            break;
         default:
             component = (
-                <Button variant="contained" color="leaf" size="large" onClick={handleOptionSelect}>
-                    <BoldText>{option.option}</BoldText>
+                <Button
+                style={buttonStyle}
+                    variant="contained"
+                    color="leaf" 
+                    size="large"
+                    onClick={handleOptionSelect}
+                >
+                    
+        
+                        <BoldText> {option.option}</BoldText>
+
+                    
                 </Button>
             );
             break;
     }
-
+    
     return component;
 }
 
@@ -183,6 +205,7 @@ function Questionnaire() {
                             <input
                                 type='textbox'
                                 onChange={handleTextChange}
+                                style={textboxStyle}
                             />
                         ):(
                             <></>
@@ -193,7 +216,7 @@ function Questionnaire() {
                 <Button> </Button>
                 {isOptionSelected && (
     <BottomWrapper>
-        <Button variant='outlined' color="leaf" size="large" onClick={goToNextQuestion}>Next</Button>
+        <Button variant='outlined'  style={nextButtonStyle} size="large" onClick={goToNextQuestion}>Next</Button>
     </BottomWrapper>
 )}
 </div>
