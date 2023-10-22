@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import Button from '@mui/material/Button';  
 import logo from '../resources/newleaf.png';
+import BoldText from '../hooks/useBold'
 
 const Wrapper = styled.div`
     display: flex;
@@ -23,7 +24,7 @@ function Header() {
         <Wrapper>
             <Logo src={logo} alt="Logo" />
             <Button variant="contained" color="leaf" size="large">
-                    SIGN UP
+                    <BoldText>SIGN UP</BoldText>
             </Button>
         </Wrapper>
     );

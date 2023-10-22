@@ -5,6 +5,7 @@ import { Button } from '@mui/material';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import theme from '../theme'
 import { getByPlaceholderText } from '@testing-library/react';
+import BoldText from '../hooks/useBold';
 
 const MWrapper = styled.div`
     display: flex;
@@ -61,8 +62,8 @@ function MainPage() {
             <MWrapper>
                 <Maintitle>
                     <div>
-                        <p style={titlefont}>Rediscover Your Life {"\n"}
-                        with AI Guidance  </p>
+                        <p style={titlefont}><BoldText>Rediscover Your Life {"\n"}
+                        with AI Guidance</BoldText>  </p>
                     </div>
                 </Maintitle>
                 Trusted by 5 travellers
@@ -70,14 +71,14 @@ function MainPage() {
             <DWrapper>
                 <DinWrapper>
                     <Description>
-                    <p style={desfont}>Enjoy your moment in foreign countries </p>
+                    <p style={desfont}><BoldText>Enjoy your moment in foreign countries</BoldText> </p>
                     TurnOverNavi AI-based generator recommends 
     the best place to live for all durations, displaying 
     pinpoint locations on a map
                     </Description>
                 </DinWrapper>
                 <DinWrapper>  
-                    <Button variant="contained" color="leaf" size="large" onClick={() => navigate("/q/1")}>Start your trip</Button>
+                    <Button variant="contained" color="leaf" size="large" onClick={() => navigate("/q/1")}><BoldText>Start your trip</BoldText></Button>
                 </DinWrapper>
             </DWrapper>
         </div>
