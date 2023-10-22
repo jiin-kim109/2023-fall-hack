@@ -57,7 +57,7 @@
         {
             "id": 2,
             "question" : "What is the relationship with the people you are traveling with?",
-            "option_type": "multi-select",
+            "option_type": "select",
              "options": [
                 {
                     "option": "Friends",
@@ -94,7 +94,7 @@
         },
            {
             "id": 3,
-            "question" : "How long is your duration of your travel?",
+            "question" : "How long is your duration(days) of your travel?",
             "option_type": "scale",
             "scale_min": "1",
             "scale_max": "365",
@@ -138,7 +138,7 @@
                     "next_page_id": 4
                 }
             ],
-            "output_text": "for a duration of ${a}"
+            "output_text": "for a duration of ${a} days"
         },
             {
             "id": 4,
@@ -266,7 +266,7 @@
 {
     "id": 8,
     "question": "What type of nature do you prefer?",
-    "option_type": "multi-select",
+    "option_type": "select",
     "options": [
         {
             "option": "Mountain",
