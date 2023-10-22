@@ -29,4 +29,4 @@ Questioning page
 ![](photo/question.jpg)
 
 Result page
-![](photo/result.jpg)
+![](photo/report.jpg)
