@@ -1,8 +1,7 @@
-<p align="center">
-  <img src="src/resources/newleaf.png" />
-</p>
-
 # NewLeafNavi
+<p align="center">
+  <img src="src/resources/newleaf.png" height = "300" width = "300"/>
+</p>
 
 ## Members
 
