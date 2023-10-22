@@ -1,4 +1,4 @@
-**Note**: Include the attached .env file into the project directory
+### **Note**: Include the attached .env file into the project directory
 
 # NewLeafNavi
 <p align="center">
