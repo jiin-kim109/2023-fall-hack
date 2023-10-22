@@ -11,8 +11,10 @@ const MWrapper = styled.div`
     display: flex;
     flex: 1;
     padding: 5px;
+    width: 100%;
     flex-direction: column;
     justify-content: center;
+    border: 2px solid red;
     align-items: center;
 `;
 
@@ -22,6 +24,7 @@ const DWrapper = styled.div`
     flex: 1;
     flex-direction: row;
     justify-content: center;
+    border: 2px solid blue;
     align-items: center;
 `;
 
@@ -46,6 +49,10 @@ const titlefont = {
     color: 'white'
 }
 
+const mainMar = { 
+    padding: '0 10%',     
+};
+
 const desfont = {
     fontSize: 25,
     color: 'white'
@@ -65,18 +72,18 @@ const Description = styled.div`
 function MainPage() {
     const navigate = useNavigate();
     return (
-        <div>
+        <div> 
             <div class="overlay"></div>
-            <video src={videoT} autoPlay loop muted />
-            <div class="content">
-                <MWrapper>
-                    <Maintitle>
+            <video src={videoT} width="100%" autoPlay loop muted />
+            <div class="content" style={mainMar}>
+            <MWrapper>
+                <Maintitle>
                         <div>
                             <p style={titlefont}><BoldText>Rediscover Your Life {"\n"}
                             with AI Guidance</BoldText>  </p>
                         </div>
                     </Maintitle>
-                </MWrapper>
+            </MWrapper>
                 <DWrapper>
                     <DinWrapper>
                         <Description>
@@ -87,7 +94,7 @@ function MainPage() {
                     <DinWrapper>  
                         <Button variant="contained" color="leaf" size="large" onClick={() => navigate("/q/1")}><BoldText>Start your trip</BoldText></Button>
                     </DinWrapper>
-                </DWrapper>
+                </DWrapper> 
             </div>
         </div>
     );
