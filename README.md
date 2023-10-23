@@ -18,6 +18,8 @@ NewLeafNavi is a web-based AI application designed to help users find ideal loca
 
 **Note**: This project is required to run the command down below to download all the dependencies.
 
+Video Tutorial: https://vimeo.com/877205970?share=copy  
+
 ```bash
 // to install all the dependencies
 npm install
