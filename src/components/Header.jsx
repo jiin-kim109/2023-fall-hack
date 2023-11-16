@@ -14,7 +14,6 @@ const Wrapper = styled.div`
     font-weight: bold;
 `;
 
-
 const Logo = styled.img`
     max-width: 100px;
     flex: 1;
